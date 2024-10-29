@@ -6,10 +6,12 @@ def validUTF8(data):
     Determines if a given data set represents a valid UTF-8 encoding.
 
     Args:
-        data (List[int]): A list of integers where each integer represents a byte.
+        data (List[int]): A list of integers
+        where each integer represents a byte.
 
     Returns:
-        bool: True if data is a valid UTF-8 encoding, else False.
+        bool: True if data is a valid UTF-8 encoding,
+        else False.
     """
     # Number of bytes remaining in the current UTF-8 character
     bytes_remaining = 0
@@ -26,7 +28,7 @@ def validUTF8(data):
                 bytes_remaining = 1
             elif (byte >> 4) == 0b1110:  # 3-byte character (1110xxxx)
                 bytes_remaining = 2
-            elif (byte >> 3) == 0b11110: # 4-byte character (11110xxx)
+            elif (byte >> 3) == 0b11110:  # 4-byte character (11110xxx)
                 bytes_remaining = 3
             else:
                 return False
