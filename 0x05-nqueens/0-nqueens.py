@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 import sys
 
+
 def print_solution(board):
     solution = []
     for row in range(len(board)):
         solution.append([row, board[row]])
     print(solution)
 
+
 def is_safe(board, row, col):
     for i in range(row):
         if board[i] == col or \
-           board[i] - i == col - row or \
-           board[i] + i == col + row:
+                board[i] - i == col - row or \
+                board[i] + i == col + row:
             return False
     return True
+
 
 def solve_nqueens(board, row, n):
     if row == n:
@@ -24,9 +27,11 @@ def solve_nqueens(board, row, n):
             board[row] = col
             solve_nqueens(board, row + 1, n)
 
+
 def nqueens(n):
     board = [-1] * n
     solve_nqueens(board, 0, n)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
