@@ -30,18 +30,14 @@ def island_perimeter(grid):
     perimeter = 0
     """
 
-    # Loop through each cell in the grid
+    perimeter = 0
     for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:  # If the cell is land
-                # Check four directions: up, down, left, right
-                if i == 0 or grid[i - 1][j] == 0:  # Check up
-                    perimeter += 1
-                if i == len(grid) - 1 or grid[i + 1][j] == 0:  # Check down
-                    perimeter += 1
-                if j == 0 or grid[i][j - 1] == 0:  # Check left
-                    perimeter += 1
-                if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:  # Check right
-                    perimeter += 1
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                perimeter += 4
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2
 
     return perimeter
