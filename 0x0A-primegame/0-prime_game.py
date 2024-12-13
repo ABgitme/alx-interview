@@ -14,20 +14,29 @@ Functions:
 
 
 def isWinner(x, nums):
+    """
+    Determine the winner of the prime game after x rounds.
+
+    Args:
+        x (int): The number of rounds to be played.
+        nums (list of int): A list where each
+        element represents the maximum number (n)
+        in the set for that round.
+
+    Returns:
+        str: The name of the player ('Maria' or 'Ben')
+        who wins the most rounds.
+        None: If the game is a tie.
+    """
     def sieve_of_eratosthenes(max_n):
         """
-        Determine the winner of the prime game after x rounds.
+        Generate a list of primes up to max_n using the Sieve of Eratosthenes.
 
         Args:
-            x (int): The number of rounds to be played.
-            nums (list of int): A list where each
-            element represents the maximum number (n)
-            in the set for that round.
+            max_n (int): The maximum number to check for primality.
 
         Returns:
-            str: The name of the player ('Maria' or 'Ben')
-            who wins the most rounds.
-        None: If the game is a tie.
+            list of bool: A boolean list where index i is True if i is a prime number, otherwise False.
         """
         is_prime = [True] * (max_n + 1)
         is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
