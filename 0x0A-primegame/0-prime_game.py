@@ -36,7 +36,8 @@ def isWinner(x, nums):
             max_n (int): The maximum number to check for primality.
 
         Returns:
-            list of bool: A boolean list where index i is True if i is a prime number, otherwise False.
+            list of bool: A boolean list where index i
+            is True if i is a prime number, otherwise False.
         """
         is_prime = [True] * (max_n + 1)
         is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
